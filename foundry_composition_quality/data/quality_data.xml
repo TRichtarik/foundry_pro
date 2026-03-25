@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="1">
+
+        <record id="test_type_chemistry" model="quality.point.test_type">
+            <field name="name">Chemistry Sample</field>
+            <field name="technical_name">chemistry_sample</field>
+        </record>
+
+    </data>
+</odoo>

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!-- Show analysis_id on quality check form -->
+    <record id="quality_check_view_form_inherit_foundry" model="ir.ui.view">
+        <field name="name">quality.check.form.inherit.foundry</field>
+        <field name="model">quality.check</field>
+        <field name="inherit_id" ref="quality_control.quality_check_view_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//sheet" position="inside">
+                <group invisible="test_type != 'chemistry_sample'" string="Chemistry">
+                    <field name="analysis_id"/>
+                    <button name="action_open_chemistry_wizard" type="object"
+                            string="Open Chemistry Sample"
+                            class="btn-primary"
+                            invisible="test_type != 'chemistry_sample'"/>
+                </group>
+            </xpath>
+        </field>
+    </record>
+
+    <!-- Add heat_required to quality point form -->
+    <record id="quality_point_view_form_inherit_foundry" model="ir.ui.view">
+        <field name="name">quality.point.form.inherit.foundry</field>
+        <field name="model">quality.point</field>
+        <field name="inherit_id" ref="quality.quality_point_view_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//sheet//group" position="inside">
+                <field name="heat_required"/>
+            </xpath>
+        </field>
+    </record>
+
+</odoo>
