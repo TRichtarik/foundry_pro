@@ -1,12 +1,12 @@
-from odoo import api, fields, models
+from odoo import _, api, fields, models
 
 
 class QualityPoint(models.Model):
     _inherit = 'quality.point'
 
     heat_required = fields.Boolean(
-        string='Require Heat',
-        help='Only create checks for MOs that have a linked heat.',
+        string=_('Require Heat'),
+        help=_('Only create checks for manufacturing orders that have a linked heat.'),
     )
 
 
@@ -14,7 +14,7 @@ class QualityCheck(models.Model):
     _inherit = 'quality.check'
 
     analysis_id = fields.Many2one(
-        'foundry.analysis', string='Chemistry Analysis',
+        'foundry.analysis', string=_('Chemistry Analysis'),
         readonly=True,
     )
 
@@ -34,7 +34,7 @@ class QualityCheck(models.Model):
             self.analysis_id = analysis
         action = {
             'type': 'ir.actions.act_window',
-            'name': 'Chemistry Sample',
+            'name': _('Chemistry Sample'),
             'res_model': 'foundry.analysis',
             'view_mode': 'form',
             'target': 'new',
