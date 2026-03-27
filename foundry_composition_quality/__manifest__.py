@@ -15,8 +15,8 @@ This module installs automatically when both *Foundry Composition* and
 *Quality Control* (Enterprise) are present.  It does not need to be
 purchased separately.
 """,
-    'author': 'Your Company',
-    'website': 'https://www.example.com',
+    'author': 'Tomáš Richtárik',
+    'website': 'https://tomasrichtarik.sk',
     'license': 'OPL-1',
     'price': 119.00,
     'currency': 'EUR',
